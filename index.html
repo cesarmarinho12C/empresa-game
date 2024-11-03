@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Gerente de Empresa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simulador de Gerente de Empresa</h1>
+    <div id="status">
+        <p>Dinheiro: <span id="dinheiro">1000</span></p>
+        <p>Reputação: <span id="reputacao">50</span></p>
+        <p>Moral dos Funcionários: <span id="moral">100</span></p>
+        <p>Turno: <span id="turno">0</span></p>
+        <p>Concorrente: <span id="concorrente-reputacao">50</span></p>
+        <p>Dificuldade: <span id="nivel-dificuldade">Fácil</span></p>
+    </div>
+
+    <h3>Funcionários</h3>
+    <ul id="lista-funcionarios"></ul>
+
+    <h3>Projetos em Andamento</h3>
+    <ul id="lista-projetos"></ul>
+
+    <h3>Configurações do Jogo</h3>
+    <label for="dificuldade">Escolha a dificuldade:</label>
+    <select id="dificuldade" onchange="mudarDificuldade()">
+        <option value="facil">Fácil</option>
+        <option value="medio">Médio</option>
+        <option value="dificil">Difícil</option>
+        <option value="impossivel">Impossível</option>
+    </select>
+
+    <h3>Ações do Turno</h3>
+    <button onclick="adicionarFuncionario()">Adicionar Funcionário</button>
+    <input type="text" id="nome-funcionario" placeholder="Nome do Funcionário">
+    <select id="nivel-funcionario">
+        <option value="0">Nível 1 (Salário: 100)</option>
+        <option value="1">Nível 2 (Salário: 200)</option>
+        <option value="2">Nível 3 (Salário: 300)</option>
+    </select>
+    
+    <button onclick="removerFuncionario()">Remover Funcionário</button>
+    <input type="text" id="nome-remover" placeholder="Nome do Funcionário a Remover">
+
+    <button onclick="promoverFuncionario()">Promover Funcionário</button>
+    <input type="text" id="nome-promover" placeholder="Nome do Funcionário a Promover">
+
+    <button onclick="realizarInvestimento('marketing')">Investir em Marketing</button>
+    <select id="tipo-marketing">
+        <option value="campanha1">Campanha 1</option>
+        <option value="campanha2">Campanha 2</option>
+    </select>
+    <input type="number" id="investimento-marketing" placeholder="Valor do Investimento" min="1">
+
+    <button onclick="iniciarProjeto()">Iniciar Projeto Especial</button>
+    <input type="text" id="nome-projeto" placeholder="Nome do Projeto">
+    
+    <button onclick="encerrarProjeto()">Encerrar Projeto</button>
+    <input type="text" id="nome-projeto-encerrar" placeholder="Nome do Projeto a Encerrar">
+
+    <button onclick="contratarConsultor()">Contratar Consultor</button>
+    <input type="number" id="custo-consultor" placeholder="Custo do Consultor" min="1">
+
+    <button onclick="investirPD()">Investir em P&D</button>
+    <input type="number" id="investimento-pd" placeholder="Valor do Investimento em P&D" min="1">
+
+    <button onclick="simularTurno()">Simular Turno</button>
+
+    <h3>Histórico de Turnos</h3>
+    <div id="historico"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
