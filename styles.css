@@ -71,3 +71,12 @@ body {
     color: #555;
   }
   
+  .choices button {
+    margin: 5px;
+    background: #2196F3;
+  }
+  
+  .choices button:hover {
+    background: #1976D2;
+  }
+  
